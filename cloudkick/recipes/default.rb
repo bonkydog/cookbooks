@@ -33,12 +33,14 @@ when "centos", "redhat"
   end
 end
 
-remote_directory "/usr/lib/cloudkick-agent/plugins" do
-  source "plugins"
+directory "/usr/lib/cloudkick-agent/plugins" do
   mode "0755"
-  files_mode "0755"
-  files_backup 0
-  recursive true
+end
+
+node.cloudkick.plugins.each do |plugin|
+  file "/usr/lib/cloudkick-agent/plugins/#{plugin}" do
+    mode "0755"
+  end
 end
 
 template "/etc/cloudkick.conf" do

@@ -1,0 +1,3 @@
+[submodule "cloudkick/files/default"]
+	path = cloudkick/files/default
+	url = git://github.com/cloudkick/agent-plugins.git
