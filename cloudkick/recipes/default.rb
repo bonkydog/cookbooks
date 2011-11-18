@@ -35,6 +35,7 @@ end
 
 directory "/usr/lib/cloudkick-agent/plugins" do
   mode "0755"
+  recursive true
 end
 
 node.cloudkick.plugins.each do |plugin|
